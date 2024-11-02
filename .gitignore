@@ -1,0 +1,11 @@
+Library/**
+.vscode/**
+Logs/**
+ProjectSettings/**
+Packages/**
+Temp/**
+UserSettings/**
+.vsconfig
+Assembly-CSharp.csproj
+DiceWarrior.sln
+Assets/**/*.meta
