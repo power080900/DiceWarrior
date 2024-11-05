@@ -4,18 +4,17 @@ using UnityEngine.UI;
 
 public class GameScenesMove : MonoBehaviour
 {
-    // 대화상자 UI 관련 변수
-    public GameObject ConfirmDialog;  // 대화상자 패널
-    public Button yesButton;               // '예' 버튼
-    public Button noButton;                // '아니오' 버튼
+    public GameObject ConfirmDialog;  // ConfirmDialog를 연결
+    public Button yesButton;          // '예' 버튼
+    public Button noButton;           // '아니오' 버튼
 
-    // 버튼 클릭 시 게임 씬으로 전환하는 함수
+    // 게임 시작 버튼 클릭 시 씬을 "PlayScene"으로 전환
     public void StartGame()
     {
         SceneManager.LoadScene("PlayScene");
     }
 
-    // 게임 종료 함수
+    // 게임 종료 버튼 클릭 시 대화상자를 띄우는 함수
     public void ShowConfirmationDialog()
     {
         ConfirmDialog.SetActive(true);  // 대화상자 활성화
