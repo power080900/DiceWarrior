@@ -7,17 +7,28 @@ public class MarkerMove : MonoBehaviour
     private Animator animator; // Animator 컴포넌트
     private Vector3 targetPosition; // 목표 위치
     private bool isWalking = false; // 애니메이션 재생 중인지 체크
+    private bool canMove = true; // 이동 가능 여부
 
     void Start()
     {
+        Debug.Log("게임시작");
+        Debug.Log("이동 가능 초기설정: " + canMove);
+        Debug.Log("적 등장");
         animator = GetComponent<Animator>();
         targetPosition = transform.position; // 시작 위치 초기화
+
     }
+
+    public void SetMovement(bool value)
+{
+    canMove = value;
+    // Debug.Log("이동 가능 여부: " + canMove); // 이동 가능 여부 출력
+}
 
     void Update()
     {
         // 입력 처리
-        if (!isWalking)
+        if (canMove && !isWalking)
         {
             if (Input.GetKeyDown(KeyCode.W)) // 위
             {

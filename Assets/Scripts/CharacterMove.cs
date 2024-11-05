@@ -6,6 +6,7 @@ public class CharacterMove : MonoBehaviour
     public float moveDuration = 3f; // 이동 시간
     private Animator animator; // Animator 컴포넌트
     private bool isMoving = true; // 이동 중인지 여부
+    private bool canMove = true; // 이동 가능 여부
 
     void Start()
     {
@@ -41,7 +42,7 @@ public class CharacterMove : MonoBehaviour
 
     void Update()
     {
-        if (!isMoving)
+        if (canMove && !isMoving)
         {
             // W, A, S, D 입력에 따라 PlayerWalk 트리거 활성화
             if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) ||
@@ -51,4 +52,9 @@ public class CharacterMove : MonoBehaviour
             }
         }
     }
+    public void SetMovement(bool value)
+        {
+            canMove = value;
+            // Debug.Log("이동 가능 여부: " + canMove); // 이동 가능 여부 출력
+        }
 }
