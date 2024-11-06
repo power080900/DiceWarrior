@@ -11,7 +11,7 @@ public class GameScenesMove : MonoBehaviour
     // 게임 시작 버튼 클릭 시 씬을 "PlayScene"으로 전환
     public void StartGame()
     {
-        SceneManager.LoadScene("PlayScene");
+        SceneManager.LoadScene("CharacterSelect");
     }
 
     // 게임 종료 버튼 클릭 시 대화상자를 띄우는 함수
