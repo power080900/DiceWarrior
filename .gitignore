@@ -10,3 +10,4 @@ Assembly-CSharp.csproj
 DiceWarrior.sln
 Assets/**/*.meta
 Assets/TextMesh Pro/**
+Assets/Sprites/**

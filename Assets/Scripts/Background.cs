@@ -6,6 +6,10 @@ public class Background : MonoBehaviour
 {
     private float moveSpeed = 2f;
 
+    void Start()
+    {
+        Debug.Log("x: " + transform.position.x);
+    }
     // Update is called once per frame
     void Update()
     {
@@ -19,9 +23,9 @@ public class Background : MonoBehaviour
         }
 
         // 위치 제한
-        if (transform.position.x < -25)
+        if (transform.position.x < -17.77778f)
         {
-            transform.position = new Vector3(25f, transform.position.y, transform.position.z);
+            transform.position = new Vector3(17.77778f, transform.position.y, transform.position.z);
         }
     }
 

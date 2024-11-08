@@ -8,7 +8,19 @@ public class GameScenesMove : MonoBehaviour
     public Button yesButton;          // '예' 버튼
     public Button noButton;           // '아니오' 버튼
 
-    // 게임 시작 버튼 클릭 시 씬을 "PlayScene"으로 전환
+    void Start()
+    {
+        // 게임 시작 시 대화상자 숨기기
+        ConfirmDialog.SetActive(false);
+
+        // '예' 버튼 클릭 시 QuitYes 메서드 연결
+        yesButton.onClick.AddListener(QuitYes);
+
+        // '아니오' 버튼 클릭 시 QuitNo 메서드 연결
+        noButton.onClick.AddListener(QuitNo);
+    }
+
+    // 게임 시작 버튼 클릭 시 씬을 "CharacterSelect"으로 전환
     public void StartGame()
     {
         SceneManager.LoadScene("CharacterSelect");
@@ -36,3 +48,4 @@ public class GameScenesMove : MonoBehaviour
         ConfirmDialog.SetActive(false);  // 대화상자 비활성화
     }
 }
+

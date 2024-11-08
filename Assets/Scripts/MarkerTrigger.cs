@@ -13,10 +13,10 @@ public class MarkerTrigger : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Trigger Enter: " + other.gameObject.name);
+        // Debug.Log("Trigger Enter: " + other.gameObject.name);
         if (other.CompareTag("Enemy"))
         {
-            Debug.Log("Marker가 Enemy와 충돌했습니다: " + other.gameObject.name);
+            // Debug.Log("Marker가 Enemy와 충돌했습니다: " + other.gameObject.name);
             if (markerMove != null)
             {
                 markerMove.SetMovement(false); // Marker 이동 비활성화
@@ -24,7 +24,7 @@ public class MarkerTrigger : MonoBehaviour
                 {
                     characterMove.SetMovement(false); // Character 이동 비활성화
                 }
-                Debug.Log("Marker 이동이 비활성화되었습니다.");
+                // Debug.Log("Marker 이동이 비활성화되었습니다.");
             }
         }
     }
@@ -33,7 +33,7 @@ public class MarkerTrigger : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            Debug.Log("Marker가 Enemy와의 충돌이 종료되었습니다: " + other.gameObject.name);
+            // Debug.Log("Marker가 Enemy와의 충돌이 종료되었습니다: " + other.gameObject.name);
             if (markerMove != null)
             {
                 markerMove.SetMovement(true); // Marker 이동 활성화
@@ -41,7 +41,7 @@ public class MarkerTrigger : MonoBehaviour
                 {
                     characterMove.SetMovement(true); // Character 이동 활성화
                 }
-                Debug.Log("Marker 이동이 활성화되었습니다.");
+                // Debug.Log("Marker 이동이 활성화되었습니다.");
             }
         }
     }
